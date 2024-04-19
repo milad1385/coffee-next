@@ -1,0 +1,31 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  opacity: 0.3;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 400;
+}
+
+.modal_container{
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 350;
+}
+
+.modal {
+  width: 400px;
+  background-color: white;
+  opacity: 1 !important;
+  position: fixed;
+  z-index: 600;
+}
+
