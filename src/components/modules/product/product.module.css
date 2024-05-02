@@ -121,6 +121,12 @@
 }
 
 
+@media (max-width : 768px){
+  .card img{
+    height: 240px;
+  }
+}
+
 
 @media (max-width : 400px){
   .card img{

@@ -4,7 +4,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { CiSearch, CiHeart } from "react-icons/ci";
 import Image from "next/image";
 const Card = ({ productInfo = {} }) => {
-  console.log(productInfo);
+
   return (
     <div className={styles.card}>
       <div className={styles.details_container}>

@@ -9,12 +9,29 @@ import Article from "./Article";
 const Articles = () => {
   return (
     <div className={styles.container}>
-      <p className={styles.title}>مقالات ما</p>
-      <span className={styles.description}>دانستنی های جذاب دنیای قهوه</span>
+      <div className={styles.title_container}>
+        <p className={styles.title}>مقالات ما</p>
+        <span className={styles.description}>دانستنی های جذاب دنیای قهوه</span>
+      </div>
       <main>
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            568: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+           
+          }}
           dir="rtl"
           autoplay={{ delay: 1500, disableOnInteraction: false }}
           //   rewind={true}

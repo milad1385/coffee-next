@@ -1,7 +1,7 @@
 import styles from "./footer.module.css";
 import { MdOutlineCopyright } from "react-icons/md";
 
-import { FaRegHeart } from "react-icons/fa";
+import { FaEnvelope, FaLaptop, FaMap, FaRegHeart } from "react-icons/fa";
 import Article from "./Article";
 import Link from "next/link";
 const Footer = () => {
@@ -11,27 +11,25 @@ const Footer = () => {
         <section className={styles.descriptions}>
           <img src="/images/logo_light.png" alt="" />
           <p className={styles.descriptions_title}>
-            شرکت فنجان داغ خوارزمی، فروشگاه اینترنتی قهوه ست
+            شرکت فنجان داغ ، فروشگاه اینترنتی قهوه ست
           </p>
 
           <div className={styles.description}>
-            <FaRegHeart style={{ fontSize: "2rem" }} />
-            <p>
-              کرج ، عظیمیه بعد از میدان اسبی جنب کافه ژوبین
-            </p>
+            <FaMap style={{ fontSize: "2rem" }} />
+            <p>کرج ، عظیمیه بعد از میدان اسبی</p>
           </div>
           <div className={styles.description}>
-            <FaRegHeart />
+            <FaLaptop />
             <p>پیگیری سفارشات : 02188305827</p>
           </div>
           <div className={styles.description}>
-            <FaRegHeart />
-            <p>support [at] set-coffee.com</p>
+            <FaEnvelope />
+            <p>set-coffee.com</p>
           </div>
         </section>
 
         <section>
-          <h4>جدیدترین نوشته ها</h4>
+          <h4 className={styles.articles}>جدیدترین نوشته ها</h4>
           <Article
             href={"/article/123"}
             data="۱۷ آبان ۱۴۰۲ "
@@ -91,11 +89,9 @@ const Footer = () => {
       <div className={`container ${styles.copy}`}>
         <p className={styles.copyRight}>
           {" "}
-          2023
-          <MdOutlineCopyright /> تمام حقوق متعلق است به <strong>
-            قهوه ست
-          </strong>{" "}
-          | طراحی و اجرا <strong>میلاد سلامیان</strong>
+          2024
+          <MdOutlineCopyright /> تمام حقوق متعلق است به <strong></strong>{" "}
+          <strong>میلاد سلامیان</strong>
         </p>
       </div>
     </footer>

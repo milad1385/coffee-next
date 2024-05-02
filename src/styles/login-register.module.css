@@ -17,3 +17,34 @@
   height: 100%;
   background-color: rgb(52, 24, 14);
 }
+
+.login_image img {
+  object-fit: cover !important;
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .login_image {
+    display: none;
+  }
+
+  .login_register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form_bg {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .form_bg {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+}

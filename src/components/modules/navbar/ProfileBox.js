@@ -1,15 +1,14 @@
-"use client";
-import { getUser } from "@/context/UserContext";
 import Link from "next/link";
 import React from "react";
 import styles from "./Nabvar.module.css";
 import { IoIosArrowDown } from "react-icons/io";
+import { authUser } from "@/utils/serverHelper";
 
-function ProfileBox() {
-  const user = getUser();
+async function ProfileBox() {
+  const user = await authUser();
   return (
     <>
-      {Object.keys(user).length ? (
+      {user ? (
         <div className={styles.dropdown}>
           <Link href="/p-user">
             <IoIosArrowDown className={styles.dropdown_icons} />

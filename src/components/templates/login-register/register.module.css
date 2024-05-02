@@ -84,3 +84,9 @@
   font-size: 13px;
   color: rgb(52, 24, 14);
 }
+
+@media (max-width: 768px) {
+  .form {
+    width: 100% !important;
+  }
+}

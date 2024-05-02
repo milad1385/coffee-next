@@ -18,6 +18,10 @@
   margin-bottom: 30px;
   margin-top: 20px;
 }
+
+.description svg {
+  font-size: 18px !important;
+}
 .footer main {
   display: flex;
   margin: 0 auto;
@@ -25,6 +29,8 @@
   padding-bottom: 40px;
   flex-direction: row-reverse;
   text-align: right;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 .footer {
   background-color: rgb(17, 17, 17);
@@ -96,10 +102,36 @@
   font-size: 1.3rem;
 }
 
-
-
-.copy{
+.copy {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .descriptions {
+    padding: 0;
+    width: 100%;
+  }
+
+  .copyRight svg {
+    font-size: 1rem;
+  }
+
+  .licenses {
+    margin-top: 20px;
+  }
+
+  .articles {
+    margin-top: 26px;
+  }
+
+  .form_bg {
+    width: 100%;
+  }
+
+  .login_register {
+    width: 100%;
+  }
 }

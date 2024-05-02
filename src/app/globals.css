@@ -25,6 +25,12 @@ body::-webkit-scrollbar {
   border-radius: 6px !important;
 }
 
+@media (max-width : 768px){
+  body::-webkit-scrollbar{
+    width: 5px;
+  }
+}
+
 body::-webkit-scrollbar-thumb {
   background-color: #711d1c !important;
 }
@@ -32,11 +38,13 @@ body::-webkit-scrollbar-thumb {
 html,
 body {
   max-width: 100vw;
+  width: 102%;
 }
 
 body {
   background: white;
   position: relative;
+  overflow-x: hidden;
 }
 
 a {
