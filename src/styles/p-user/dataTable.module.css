@@ -1,3 +1,24 @@
+.table_container {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.Table_container::-webkit-scrollbar {
+  height: 10px !important;
+}
+
+.Table_Container::-webkit-scrollbar-thumb{
+  background-color: #711d1c !important;
+}
+/* .table_container table {
+  width: 100%;
+  white-space: nowrap;
+} */
+
+.Table_Container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 30px 25px;
+}
 .title {
   margin-top: 30px;
   text-align: right;
@@ -98,9 +119,10 @@
   width: -webkit-fill-available;
 }
 
-.table_container {
+/* .table_container {
   padding: 40px 25px;
-}
+  overflow-x: auto;
+} */
 
 .answer_contact {
   color: rgb(0, 0, 0);
@@ -147,4 +169,20 @@
   margin: 15rem auto;
   font-size: 1.7rem;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .Table_Container {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .title span {
+    font-size: 22px;
+    margin-right: 2rem;
+  }
+
+  .table {
+    font-size: 14px;
+  }
 }

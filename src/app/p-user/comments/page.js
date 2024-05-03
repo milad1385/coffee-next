@@ -4,6 +4,7 @@ import React from "react";
 import connectToDB from "@/configs/db";
 import Commentmodel from "@/models/Comment";
 import { authUser } from "@/utils/serverHelper";
+import styles from "./comments.module.css";
 
 const page = async () => {
   connectToDB();
@@ -14,7 +15,7 @@ const page = async () => {
 
   return (
     <Layout>
-      <main>
+      <main className={styles.main_container}>
         <DataTable
           comments={JSON.parse(JSON.stringify(comments))}
           title="لیست کامنت‌ها"

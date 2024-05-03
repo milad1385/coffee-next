@@ -16,7 +16,7 @@ export default function DataTable({ comments, title }) {
           <span>{title}</span>
         </h1>
       </div>
-      <div className={styles.table_container}>
+      <div className={styles.Table_Container}>
         <table className={styles.table}>
           <thead>
             <tr>

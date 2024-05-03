@@ -2,17 +2,22 @@
 import styles from "./topbar.module.css";
 import { IoIosSearch } from "react-icons/io";
 import Notification from "./Notification";
-import { getUser } from "@/context/UserContext";
+import { getShow, getUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { FaBars } from "react-icons/fa6";
+import Overlay from "../Overlay/Overlay";
 const Topbar = () => {
   const path = usePathname();
   const router = useRouter();
   const user = getUser();
+  const { isShow, setIsShow } = getShow();
   useEffect(() => {
     router.refresh();
   }, [path]);
+
+  const showMenuHandler = () => setIsShow(true);
   return (
     <>
       <div className={styles.topbar}>
@@ -25,6 +30,7 @@ const Topbar = () => {
             src={`${user?.image ?? "http://localhost:3000/uploads/user.png"}`}
             alt=""
           />
+          <FaBars onClick={showMenuHandler} className={styles.icon_bar} />
         </div>
         <section>
           <div className={styles.searchBox}>
@@ -36,6 +42,8 @@ const Topbar = () => {
           <Notification />
         </section>
       </div>
+
+      <Overlay isShow={isShow} onShow={setIsShow} key={crypto.randomUUID()} />
     </>
   );
 };

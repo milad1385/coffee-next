@@ -15,7 +15,7 @@
   font-family: shabnam;
 }
 
-img{
+img {
   user-select: none;
 }
 
@@ -25,9 +25,14 @@ body::-webkit-scrollbar {
   border-radius: 6px !important;
 }
 
-@media (max-width : 768px){
-  body::-webkit-scrollbar{
+@media (max-width: 768px) {
+  body::-webkit-scrollbar {
     width: 5px;
+  }
+
+  .swal-title {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -159,7 +164,6 @@ a {
   box-shadow: none !important;
 }
 
-
 .swal-button--confirm {
   box-shadow: none !important;
   background: #e9e5e5 !important;
@@ -207,7 +211,7 @@ a {
   top: unset !important;
 }
 
-.empty_err p{
+.empty_err p {
   margin: 0 !important;
 }
 
@@ -222,20 +226,14 @@ a {
   margin-top: 15px;
 }
 
-
-
-.swal-footer{
+.swal-footer {
   display: flex;
   justify-content: center;
 }
 
-.swal-button{
+.swal-button {
   background-color: #711d1c !important;
   color: white !important;
-
 }
 
-
-
 /* recharts */
-

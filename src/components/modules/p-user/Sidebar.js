@@ -10,11 +10,17 @@ import { TbListDetails } from "react-icons/tb";
 import Link from "next/link";
 import swal from "sweetalert";
 import { showSwal } from "@/utils/helper";
-import { getUser } from "@/context/UserContext";
+import { getShow, getUser } from "@/context/UserContext";
+import { useEffect } from "react";
 
 const Sidebar = () => {
+  const { isShow, setIsShow } = getShow();
   const router = useRouter();
   const path = usePathname();
+
+  useEffect(() => {
+    setIsShow(false);
+  }, [path]);
 
   const logoutHandler = () => {
     swal({
@@ -35,11 +41,10 @@ const Sidebar = () => {
     });
   };
 
-
   const user = getUser();
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isShow ? styles.show : ""}`}>
       <div className={styles.sidebar_header}>
         <p>خوش اومدی {user.name} عزیز</p>
       </div>

@@ -19,6 +19,13 @@
   gap: 10px;
   align-items: center;
   flex-direction: row-reverse;
+  position: relative;
+}
+.icon_bar {
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  display: none;
 }
 .profile img {
   width: 50px;
@@ -127,4 +134,37 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+  }
+
+  .profile {
+    justify-content: center;
+  }
+
+  .topbar {
+    height: auto;
+    padding: 14px 10px;
+  }
+
+  .topbar section {
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .searchBox input {
+    width: 240px;
+  }
+
+  .notifications_box {
+    left: 25px;
+    top: 121px;
+  }
+
+  .icon_bar {
+    display: block;
+  }
 }

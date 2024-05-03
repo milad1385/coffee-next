@@ -12,3 +12,10 @@
   visibility: visible;
   opacity: 0.5;
 }
+
+@media (min-width: 996px) {
+  .Overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

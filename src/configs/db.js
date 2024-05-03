@@ -4,7 +4,9 @@ const connectToDB = async () => {
     if (mongoose.connections[0].readyState) {
       return false;
     }
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL, {
+      authSource: "admin",
+    });
     console.log("Connected to db successFully :)");
   } catch (err) {
     console.log("Connected to db is faild please try again !!!");
