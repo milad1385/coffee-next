@@ -120,6 +120,8 @@
   color: #494949;
 }
 
+
+
 @media (max-width: 768px) {
   .nav {
     display: flex;

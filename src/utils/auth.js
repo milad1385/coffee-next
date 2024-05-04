@@ -12,7 +12,7 @@ const verifyPassword = async (password, hashedPassword) => {
 };
 
 const generateAccessToken = (data) => {
-  const token = sign({ ...data }, process.env.AccessTokenSecretKey, {
+  const token = sign({ ...data }, process.env.NEXT_PUBLIC_AccessTokenSecretKey, {
     expiresIn: "15s",
   });
   return token;
@@ -20,7 +20,7 @@ const generateAccessToken = (data) => {
 
 const verifyAccessToken = (token) => {
   try {
-    const tokenPayload = verify(token, process.env.AccessTokenSecretKey);
+    const tokenPayload = verify(token, process.env.NEXT_PUBLIC_AccessTokenSecretKey);
     return tokenPayload;
   } catch (err) {
     return false;
@@ -28,7 +28,7 @@ const verifyAccessToken = (token) => {
 };
 
 const generateRefreshToken = (data) => {
-  const token = sign({ ...data }, process.env.RefreshSecretKey, {
+  const token = sign({ ...data }, process.env.NEXT_PUBLIC_RefreshSecretKey, {
     expiresIn: "5d",
   });
   return token;
@@ -36,7 +36,7 @@ const generateRefreshToken = (data) => {
 
 const verifyResfreshToken = (token) => {
   try {
-    const tokenPayload = verify(token, process.env.RefreshSecretKey);
+    const tokenPayload = verify(token, process.env.NEXT_PUBLIC_RefreshSecretKey);
     return tokenPayload;
   } catch (err) {
     return false;

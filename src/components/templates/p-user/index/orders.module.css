@@ -38,3 +38,15 @@
   width: 100%;
   padding: 9rem 0 12.5rem 0;
 }
+
+
+
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+  }
+
+  .empty{
+    font-size: 18px;
+  }
+}

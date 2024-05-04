@@ -234,3 +234,30 @@
   color: #711d1c;
   margin: 0 !important;
 }
+
+@media (max-width: 768px) {
+  .details_main {
+    flex-direction: column-reverse;
+    font-size: 14px;
+  }
+
+  .details_main input {
+    padding: 8px;
+  }
+
+  .title span {
+    font-size: 22px;
+    margin-right: 2rem;
+  }
+
+  .password_group button {
+    font-size: 11px;
+  }
+
+  .submit_btn {
+    font-size: 18px;
+    width: auto;
+    padding: 10px;
+    margin-top: 30px;
+  }
+}

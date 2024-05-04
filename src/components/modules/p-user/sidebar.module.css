@@ -62,7 +62,7 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    position: absolute;
+    position: fixed;
     right: -253px;
     bottom: 0;
     top: 0;

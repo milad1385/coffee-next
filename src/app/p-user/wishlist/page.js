@@ -1,9 +1,9 @@
 import UserPanelLayout from "@/components/layouts/UserPanelLayout";
 import styles from "@/styles/p-user/wishlist.module.css";
-import Product from "@/components/templates/p-user/wishlist/Product";
 import connectToDB from "@/configs/db";
 import { authUser } from "@/utils/serverHelper";
 import WishlistModel from "@/models/Wishlist";
+import Products from "@/components/templates/p-user/products/Products";
 
 const page = async () => {
   connectToDB();
@@ -18,20 +18,7 @@ const page = async () => {
         <h1 className={styles.title}>
           <span>علاقه مندی ها</span>
         </h1>
-        <div className={styles.container}>
-          {wishlist.length &&
-            wishlist.map((wish) => (
-              <Product
-                key={wish._id}
-                productID={String(wish.product._id)}
-                title={wish.product.title}
-                price={wish.product.price}
-                score={wish.product.score}
-                image={wish.product.images[0]}
-                link={wish.product.link}
-              />
-            ))}
-        </div>
+        <Products wishlist={JSON.parse(JSON.stringify(wishlist))} />
 
         {wishlist.length === 0 && (
           <p className={styles.empty}>محصولی وجود ندارد</p>

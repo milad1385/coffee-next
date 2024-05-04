@@ -27,10 +27,22 @@ const page = async () => {
     <Layout>
       <main>
         <section className={styles.boxes}>
-          <Box title="مجموع تیکت ها " value={allTickets.length} />
-          <Box title="مجموع کامنت ها " value={comments.length} />
-          <Box title="مجموع سفارشات" value="2" />
-          <Box title="مجموع علاقه مندی ها" value={wishList.length} />
+          <Box
+            title="مجموع تیکت ها "
+            value={allTickets.length}
+            icon={"ticket"}
+          />
+          <Box
+            title="مجموع کامنت ها "
+            value={comments.length}
+            icon={"comment"}
+          />
+          <Box title="مجموع سفارشات" value="2" icon={"order"} />
+          <Box
+            title="مجموع علاقه مندی ها"
+            value={wishList.length}
+            icon={"wish"}
+          />
         </section>
         <section className={styles.contents}>
           <Tickets tickets={JSON.parse(JSON.stringify(tickets))} />
