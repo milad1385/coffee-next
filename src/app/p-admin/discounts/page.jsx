@@ -5,10 +5,8 @@ import Table from "@/components/templates/p-admin/discount/Table";
 import discountsModel from "@/models/Discount";
 import connectToDB from "@/configs/db";
 async function Discount() {
-  const res = await fetch(`http://localhost:3000/api/discount`, {
-    cache: "no-store",
-  });
-  const discounts = await res.json();
+  connectToDB();
+  const discounts = await discountsModel.find({});
   return (
     <Layout>
       <div className="container">
