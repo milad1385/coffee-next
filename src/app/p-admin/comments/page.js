@@ -2,12 +2,10 @@ import React from "react";
 import Layout from "@/components/layouts/AdminPanelLayout";
 import styles from "@/components/templates/p-admin/comments/table.module.css";
 import Table from "@/components/templates/p-admin/comments/Table";
+import CommentModel from "@/models/Comment";
 
 const Comments = async () => {
-  const res = await fetch(`http://localhost:3000/api/comments`, {
-    cache: "no-store",
-  });
-  const comments = await res.json();
+  const comments = await CommentModel.find({});
 
   return (
     <Layout>
