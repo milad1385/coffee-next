@@ -9,21 +9,25 @@ export async function PUT(req, { params }) {
   try {
     connectToDB();
     const form = await req.formData();
-    const name = form.get("name");
-    const phone = form.get("phone");
-    const email = form.get("email");
-    const image = form.get("image");
+    const name = form?.get("name");
+    const phone = form?.get("phone");
+    const email = form?.get("email");
+    const image = form?.get("image");
     if (!name.length || !phone.length || !email.length) {
       return Response.json({ msg: "invalid fields" }, { status: 422 });
     }
 
-    const buffer = Buffer.from(await image.arrayBuffer());
-    const filename = Date.now() + image.name;
-    const filePath = path.join(process.cwd(), "public/uploads/" + filename);
-    const err = await writeFile(filePath, buffer);
+    let filename = "user.png";
 
-    if (err) {
-      return Response.json({ msg: "upload image faild !!!" });
+    if (image) {
+      const buffer = Buffer.from(await image.arrayBuffer());
+      filename = Date.now() + image.name;
+      const filePath = path.join(process.cwd(), "public/uploads/" + filename);
+      const err = await writeFile(filePath, buffer);
+
+      if (err) {
+        return Response.json({ msg: "upload image faild !!!" });
+      }
     }
 
     if (isValidObjectId(params.id)) {

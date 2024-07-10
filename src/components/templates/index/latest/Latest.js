@@ -1,9 +1,10 @@
 import Link from "next/link";
 import styles from "./latest.module.css";
 import { FaChevronLeft } from "react-icons/fa6";
-import Product from "@/components/modules/product/Product";
 import productsModel from "@/models/Product";
 import connectToDB from "@/configs/db";
+import Products from "./Products";
+import { Suspense } from "react";
 
 const Latest = async () => {
   connectToDB();
@@ -20,9 +21,7 @@ const Latest = async () => {
         </Link>
       </section>
       <main data-aos="fade-up" className={styles.products}>
-        {products.map((product) => (
-          <Product productInfo={product} key={product._id} />
-        ))}
+        <Products products={products} />
       </main>
     </div>
   );

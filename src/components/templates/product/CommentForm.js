@@ -22,7 +22,7 @@ const CommentForm = ({ productId, userId }) => {
     const date = JSON.parse(localStorage.getItem("userInfo"));
     setValue("email", date?.email ?? "");
     setValue("username", date?.username ?? "");
-    if (date.username) {
+    if (date?.username) {
       setIsSaved(true);
     }
   };

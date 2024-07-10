@@ -2,14 +2,16 @@ import connectToDB from "@/configs/db";
 import usersModel from "@/models/User";
 import { cookies } from "next/headers";
 import loginValidator from "@/validators/auth/login";
-import { generateAccessToken, generateRefreshToken, verifyPassword } from "@/utils/auth";
+import {
+  generateAccessToken,
+  generateRefreshToken,
+  verifyPassword,
+} from "@/utils/auth";
 export async function POST(req) {
   try {
     connectToDB();
     const body = await req.json();
-
     const isValid = await loginValidator(body);
-    console.log(isValid);
     if (isValid !== true) {
       return Response.json({ msg: isValid }, { status: 422 });
     }

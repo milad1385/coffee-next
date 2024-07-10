@@ -31,7 +31,7 @@ export async function POST(req) {
       );
     }
 
-    const users = await usersModel.find({});
+    const usersCount = await usersModel.countDocuments();
 
     const hashedPassword = await hashPassword(password);
     const accessToken = generateAccessToken({ name });
@@ -42,7 +42,7 @@ export async function POST(req) {
       phone,
       password: hashedPassword,
       email,
-      role: users.length > 0 ? "USER" : "ADMIN",
+      role: usersCount > 0 ? "USER" : "ADMIN",
       refreshToken,
     });
 

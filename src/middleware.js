@@ -13,18 +13,6 @@ export async function middleware(request) {
     },
   });
 
-  const userInfo = await res.json();
-
-  // handle protection for api
-  if (
-    request.method !== "GET" &&
-    request.nextUrl.pathname.startsWith("/api/product")
-  ) {
-    if (userInfo.role !== "ADMIN") {
-      throw new Error("this route is forbbiden :(");
-    }
-  }
-
   // handle refresh Token
   if (res.status === 401) {
     const refresh = await fetch(`http://localhost:3000/api/auth/refresh`, {

@@ -16,7 +16,7 @@ const Layout = async ({ children }) => {
   return (
     <div className={styles.layout}>
       <section className={styles.section}>
-        <Sidebar user={user.name} />
+        <Sidebar user={user?.name} />
         <div className={styles.contents}>
           <Topbar />
           {children}
