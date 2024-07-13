@@ -10,6 +10,7 @@ import connectToDB from "@/configs/db";
 import wishsListModel from "@/models/Wishlist";
 import { authUser } from "@/utils/serverHelper";
 
+
 const product = async ({ params }) => {
   connectToDB();
   const user = await authUser();
@@ -35,16 +36,18 @@ const product = async ({ params }) => {
             isWish={!!isExisted}
             product={JSON.parse(JSON.stringify(productInfo))}
           />
-          <Gallery images={JSON.parse(JSON.stringify(productInfo.images))} />
+          <Gallery title={productInfo.title} images={JSON.parse(JSON.stringify(productInfo.images))} />
         </div>
         <Tabs
           product={JSON.parse(JSON.stringify(productInfo))}
           userId={JSON.parse(JSON.stringify(user._id ?? false))}
         />
+        <div className={styles.same}>
         <MoreProducts
           currProduct={JSON.parse(JSON.stringify(productInfo._id))}
           same={JSON.parse(JSON.stringify(sameProducts))}
         />
+        </div>
       </div>
       <Footer />
     </div>

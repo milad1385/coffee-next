@@ -30,4 +30,28 @@
 .comment p {
   margin-bottom: 2px;
   margin-top: 10px !important;
+  color: #555555;
+}
+
+
+@media (max-width: 780px) {
+ .user_info p{
+  font-size: 13px;
+ }
+
+ .user_info strong{
+  font-size: 13px;
+ }
+
+ .fill_star{
+  font-size: 13px;
+ }
+
+ .non_fill{
+  font-size: 13px;
+ }
+
+ .comment p{
+  font-size: 13px;
+ }
 }

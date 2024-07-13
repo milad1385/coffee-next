@@ -9,10 +9,14 @@ const showSwal = (title, icon, buttons, callBack) => {
 };
 
 const setToLocalStorage = (data, key) => {
+  const ISSERVER = typeof window === "undefined";
+  if (ISSERVER) return null;
   localStorage.setItem(key, JSON.stringify(data));
 };
 
 const getLocalStorage = (key) => {
+  const ISSERVER = typeof window === "undefined";
+  if (ISSERVER) return null;
   const data = JSON.parse(localStorage.getItem(key));
   return data;
 };

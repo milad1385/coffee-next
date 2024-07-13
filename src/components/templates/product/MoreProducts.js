@@ -25,7 +25,25 @@ const MoreProducts = ({ same, currProduct }) => {
             slidesPerView={4}
             spaceBetween={30}
             dir="rtl"
-            rewind={true}
+            loop={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+              },
+            }}
             navigation={true}
             modules={[Navigation]}
             className="mySwiper "

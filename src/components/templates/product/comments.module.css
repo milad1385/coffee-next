@@ -12,3 +12,19 @@
 .form_bg {
   width: 50%;
 }
+
+
+@media (max-width: 780px) {
+
+  .comments{
+    flex-direction: column-reverse;
+    gap: 13px;
+  }
+ .user_comments{
+  width: 100%;
+ }
+
+ .form_bg{
+  width: 100%;
+ }
+}

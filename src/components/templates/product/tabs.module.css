@@ -82,4 +82,15 @@
   margin-top: 20px;
 }
 
+@media (max-width: 780px) {
+  .tabs {
+    padding: 10px;
+  }
+  .tabs ul {
+    width: 100%;
+  }
 
+  .tabs ul li button {
+    font-size: 14px;
+  }
+}

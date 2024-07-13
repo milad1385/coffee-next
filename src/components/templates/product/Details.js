@@ -20,8 +20,11 @@ import { useCardContext } from "@/context/CardContext";
 const Details = ({ product, isWish, userId }) => {
   const { state, dispatch } = useCardContext();
   const [count, setCount] = useState(() => {
-    const basket = JSON.parse(localStorage.getItem("basket")) || [];
-    const productInfo = basket.find((pro) => pro.id === product._id);
+    const ISSERVER = typeof window === "undefined";
+    const basket = !ISSERVER
+      ? JSON.parse(localStorage.getItem("basket")) || []
+      : null;
+    const productInfo = basket?.find((pro) => pro.id === product._id);
     return productInfo?.count ?? 0;
   });
   const [isExist, setIsExist] = useState(false);
@@ -72,7 +75,7 @@ const Details = ({ product, isWish, userId }) => {
   }, [count]);
 
   return (
-    <main style={{ width: "63%" }}>
+    <main className={styles.right}>
       <Breadcrumb title={product.title} />
       <h2>{product.title}</h2>
 

@@ -1,6 +1,7 @@
 import styles from "./answer.module.css";
 
 const Answer = ({ answerTicket , type , user }) => {
+  
   return (
     <section
       className={type == "user" ? styles.userTicket : styles.adminticket}

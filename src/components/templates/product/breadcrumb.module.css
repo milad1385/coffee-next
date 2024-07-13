@@ -1,15 +1,32 @@
-.breadcrumb a {
+.breadcrumb a , .mobileBread a {
   color: rgb(144, 140, 140);
 }
-.breadcrumb span {
+.breadcrumb span , .mobileBread span {
   position: relative;
   top: 2px;
 }
-.breadcrumb {
+.breadcrumb , .mobileBread {
   display: flex;
   align-items: center;
   direction: rtl;
   margin-bottom: 15px;
   font-size: 15px;
   gap: 9px;
+}
+
+
+
+.mobileBread{
+  display: none;
+  padding-right: 10px;
+}
+
+@media (max-width: 780px) {
+  .breadcrumb {
+    display: none;
+  }
+
+  .mobileBread{
+    display: flex;
+  }
 }

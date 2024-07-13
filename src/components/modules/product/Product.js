@@ -35,10 +35,10 @@ const Card = ({ productInfo = {} }) => {
         <Link href={`/product/${productInfo.link}`}>{productInfo.title}</Link>
         <div>
           {new Array(productInfo.score).fill(0).map((score, index) => (
-            <FaStar key={index} />
+            <FaStar key={index} className={styles.fill_star} />
           ))}
           {new Array(5 - productInfo.score).fill(0).map((score, index) => (
-            <FaRegStar key={index} />
+            <FaRegStar key={index} className={styles.nonfill_star} />
           ))}
         </div>
         <span>{productInfo.price.toLocaleString("fa")} تومان</span>

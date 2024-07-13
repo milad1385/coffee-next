@@ -1,0 +1,9 @@
+.left {
+  width: 36%;
+}
+
+@media (max-width: 780px) {
+  .left {
+    width: 100%;
+  }
+}

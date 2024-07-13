@@ -125,6 +125,32 @@
   .card img{
     height: 240px;
   }
+
+  .details{
+    gap: 10px;
+  }
+  .details a{
+    font-size: 14px;
+  }
+
+  .details div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+
+.fill_star{
+  font-size: 14px;
+}
+
+  .nonfill_star{
+    font-size: 14px;
+  }
+
+  .details span{
+    font-size: 14px;
+  }
 }
 
 

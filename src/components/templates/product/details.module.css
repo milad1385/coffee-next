@@ -23,6 +23,7 @@
   display: block;
   width: 93%;
   color: rgb(160 151 151);
+  line-height: 27px;
 }
 .Available svg {
   font-size: 1.5rem;
@@ -51,7 +52,7 @@
   height: 50px;
 }
 
-.counter{
+.counter {
   user-select: none;
 }
 
@@ -128,4 +129,15 @@
 }
 .share svg {
   font-size: 1.3rem;
+}
+
+.right {
+  width: 65%;
+}
+
+@media (max-width: 780px) {
+  .right {
+    width: 100%;
+  }
+
 }

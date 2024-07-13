@@ -23,3 +23,38 @@
 .container {
   overflow: auto;
 }
+
+
+@media(max-width : 1280px ){
+
+}
+
+@media(max-width : 1024px ){
+  
+}
+
+@media(max-width : 992px ){
+  
+}
+
+@media(max-width : 780px ){
+  .main{
+    flex-direction: column-reverse;
+  }
+
+  .contents{
+    margin: 10px;
+  }
+
+  .same{
+    margin-top: 40px;
+  }
+}
+
+@media(max-width : 576px ){
+  
+}
+
+
+
+

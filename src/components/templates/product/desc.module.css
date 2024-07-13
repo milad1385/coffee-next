@@ -1,0 +1,10 @@
+.content {
+  color: #555555;
+}
+
+@media (max-width: 780px) {
+  .content {
+    font-size: 15px;
+    line-height: 27px;
+  }
+}

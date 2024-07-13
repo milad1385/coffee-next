@@ -13,11 +13,11 @@ const Comment = ({ username, score, body, createdAt }) => {
           </div>
           <div className={styles.stars}>
             {new Array(score).fill(0).map((score, index) => (
-              <FaStar key={index} />
+              <FaStar key={index} className={styles.fill_star} />
             ))}
 
             {new Array(5 - score).fill(0).map((score, index) => (
-              <FaRegStar key={index} />
+              <FaRegStar className={styles.non_fill} key={index} />
             ))}
           </div>
         </div>
