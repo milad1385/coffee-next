@@ -4,7 +4,6 @@ import { FaChevronLeft } from "react-icons/fa6";
 import productsModel from "@/models/Product";
 import connectToDB from "@/configs/db";
 import Products from "./Products";
-import { Suspense } from "react";
 
 const Latest = async () => {
   connectToDB();

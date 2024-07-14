@@ -1,8 +1,9 @@
 "use client";
 import { useEffect } from "react";
-import styles from "./topbar.module.css";
+import styles from "../p-user/topbar.module.css";
 import { IoIosSearch, IoIosNotifications } from "react-icons/io";
 import { useRouter } from "next/navigation";
+import MenuIcon from "./MenuIcon";
 const Topbar = ({ userInfo }) => {
   const router = useRouter();
   useEffect(() => {
@@ -17,6 +18,7 @@ const Topbar = ({ userInfo }) => {
             <span>ادمین</span>
           </div>
           <img src={userInfo.image} alt={userInfo.image} />
+          <MenuIcon />
         </div>
         <section>
           <div className={styles.searchBox}>

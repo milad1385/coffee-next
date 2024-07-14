@@ -1,20 +1,27 @@
 "use client";
-import styles from "./sidebar.module.css";
+import styles from "./../p-user/sidebar.module.css";
 import { ImReply } from "react-icons/im";
 import { FaComments, FaHeart, FaShoppingBag, FaUsers } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import { MdSms, MdLogout } from "react-icons/md";
+import { MdSms } from "react-icons/md";
 import { usePathname, useRouter } from "next/navigation";
 import { TbListDetails } from "react-icons/tb";
 import Link from "next/link";
-import swal from "sweetalert";
 import Logout from "./Logout";
+import { getShow } from "@/context/UserContext";
+import { useEffect } from "react";
 
 const Sidebar = ({ userInfo }) => {
+  const {isShow , setIsShow} = getShow();
   const path = usePathname();
   const router = useRouter();
+
+
+  useEffect(() => {
+    setIsShow(false);
+  }, [path]);
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isShow ? styles.show : ""}`}>
       <div className={styles.sidebar_header}>
         <p>خوش اومدی {userInfo.name} عزیز</p>
       </div>

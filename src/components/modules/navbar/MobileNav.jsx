@@ -19,9 +19,11 @@ import {
   FaStore,
 } from "react-icons/fa";
 import Overlay from "../Overlay/Overlay";
-function MobileNav() {
+import { IoMdSettings } from "react-icons/io";
+import { BiSolidDashboard } from "react-icons/bi";
+function MobileNav({ user }) {
   const [isShowOverlay, setIsShowOverlay] = useState(false);
-
+  console.log(user);
   const showMenuHandler = () => {
     setIsShowOverlay(true);
   };
@@ -78,10 +80,24 @@ function MobileNav() {
           </ul>
           <section>
             <ul className={`${styles.links} ${styles.infos}`}>
-              <li>
-                <FaArrowRightToBracket />
-                <Link href="/login-register">ورود / ثبت نام</Link>
-              </li>
+              {user ? (
+                <li>
+                  <IoMdSettings />
+                  <Link href="/p-user">پنل کاربری</Link>
+                </li>
+              ) : (
+                <li>
+                  <FaArrowRightToBracket />
+                  <Link href="/login-register">ورود / ثبت نام</Link>
+                </li>
+              )}
+
+              {user.role === "ADMIN" && (
+                <li>
+                  <BiSolidDashboard />
+                  <Link href="/p-admin">پنل مدیریت</Link>
+                </li>
+              )}
               <li>
                 <FaBasketShopping />
                 <Link href="/cart">سبد خرید</Link>

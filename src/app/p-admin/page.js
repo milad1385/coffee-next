@@ -21,10 +21,10 @@ async function AdminHomePage() {
     <AdminPanelLayout>
       <main>
         <section className={styles.dashboard_contents}>
-          <Box title="مجموع تیکت های دریافتی" value={tickets.length} />
-          <Box title="مجموع محصولات سایت" value={products.length} />
-          <Box title="مجموع سفارشات" value="333" />
-          <Box title="مجموع کاربر های سایت" value={users.length} />
+          <Box icon={"ticket"} title="مجموع تیکت های دریافتی" value={tickets.length} />
+          <Box icon={"product"} title="مجموع محصولات سایت" value={products.length} />
+          <Box icon={"basket"} title="مجموع سفارشات" value="333" />
+          <Box icon={"users"} title="مجموع کاربر های سایت" value={users.length} />
         </section>{" "}
         <div className={styles.dashboard_charts}>
           <section>

@@ -13,7 +13,7 @@ async function Navbar() {
   const wishesList = await wishesListModel.find({ user: user._id });
   return (
     <>
-      <MobileNav />
+      <MobileNav user={JSON.parse(JSON.stringify(user))} />
       <nav className={styles.navbar}>
         <main>
           <div>

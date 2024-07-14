@@ -60,6 +60,10 @@
   .title {
     padding: 0 17px;
   }
+
+  .products {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 420px) {
