@@ -58,8 +58,8 @@ function GrowthChart() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis style={{fontSize :"13px"}} dataKey="name" />
+        <YAxis style={{fontSize :"13px"}} />
         <Tooltip />
         <Line type="monotone" dataKey="prev" stroke="#711D1C" />
         <Line type="monotone" dataKey="current" stroke="#000" />

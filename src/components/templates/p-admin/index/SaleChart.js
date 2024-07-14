@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
 } from "recharts";
 
 function SaleChart() {
@@ -52,8 +52,8 @@ function SaleChart() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis style={{fontSize : "10px"}} />
+        <XAxis dataKey="date" style={{ fontSize: "13px" }} />
+        <YAxis style={{ fontSize: "13px" }} />
         <Tooltip />
 
         <Area type="monotone" dataKey="sale" stroke="#000" fill="#711D1C" />
