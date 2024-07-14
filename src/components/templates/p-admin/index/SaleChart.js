@@ -53,10 +53,17 @@ function SaleChart() {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" style={{ fontSize: "13px" }} />
-        <YAxis style={{ fontSize: "13px" }} />
+        <YAxis unit="ت" style={{ fontSize: "13px" }} />
         <Tooltip />
 
-        <Area type="monotone" dataKey="sale" stroke="#000" fill="#711D1C" />
+        <Area
+          name="مقدار فروش"
+          unit="تومان"
+          type="monotone"
+          dataKey="sale"
+          stroke="#000"
+          fill="#711D1C"
+        />
       </AreaChart>
     </ResponsiveContainer>
   );

@@ -22,14 +22,15 @@
   width: 50%;
 }
 
-
-@media (max-width : 780px){
-  .dashboard_charts{
+@media (max-width: 780px) {
+  .dashboard_charts {
     flex-direction: column;
     padding: 10px;
+    height: 250px;
   }
 
-  .dashboard_charts section{
+  .dashboard_charts section {
     width: 100%;
   }
+
 }
