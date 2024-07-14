@@ -1,3 +1,21 @@
+.Table_container::-webkit-scrollbar {
+  height: 10px !important;
+}
+
+.Table_Container::-webkit-scrollbar-thumb {
+  background-color: #711d1c !important;
+  height: 5px;
+}
+.table_container table {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.Table_Container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 30px 25px;
+}
 .title {
   margin-top: 30px;
   text-align: right;
@@ -6,6 +24,7 @@
   font-size: 30px;
   z-index: 1;
   font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .title:before {
@@ -99,7 +118,11 @@
 }
 
 .table_container {
-  padding: 40px 25px;
+  overflow-x: auto;
+}
+
+.main_container {
+  padding: 0 15px;
 }
 
 .answer_contact {
@@ -149,6 +172,66 @@
   border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+  .Table_Container {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .title span {
+    font-size: 22px;
+    margin-right: 2rem;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+}
+
+
+.answer_contact {
+  color: rgb(0, 0, 0);
+  background-color: blue !important;
+}
+
+.no_answer_contact {
+  color: white;
+  background-color: red !important;
+}
+.answer_comment {
+  color: rgb(255, 255, 255);
+  background-color: blue !important;
+}
+
+.no_answer_comment {
+  color: white;
+  background-color: red !important;
+}
+.check,
+.no_check {
+  font-size: 13px;
+  background: #000000;
+  padding: 0.4rem 0.7rem;
+  width: -webkit-fill-available;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+}
+.no_check {
+  background: #711d1c;
+}
+
+.empty {
+  color: white;
+  background-color: #711d1c;
+  padding: 0.7rem 2rem;
+  width: max-content;
+  margin: 15rem auto;
+  font-size: 1.7rem;
+  border-radius: 5px;
+}
+
 .open {
   background-color: green;
   color: white;
@@ -157,4 +240,15 @@
 .close {
   background-color: red;
   color: white;
+}
+
+
+.noExpired {
+  background-color: green !important;
+  color: white !important;
+}
+
+.Expired {
+  background-color: red !important;
+  color: white !important;
 }

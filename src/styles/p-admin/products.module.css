@@ -74,10 +74,28 @@
   cursor: pointer;
 }
 
-
-.empty_msg{
+.empty_msg {
   font-size: 14px;
   position: absolute;
   color: #711d1c;
   margin-top: 2px;
+}
+
+@media (max-width: 567px) {
+  .add_product {
+    grid-template-columns: 1fr;
+  }
+
+  .add_product input {
+    font-size: 13px !important;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .add_product button {
+    font-size: 15px;
+    padding: 10px;
+  }
 }

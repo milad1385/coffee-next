@@ -35,7 +35,7 @@ function AddDiscount() {
     }
   };
   return (
-    <>
+    <div>
       <h1 className={styles.title}>
         <span>ایجاد کد تخفیف </span>
       </h1>
@@ -77,7 +77,7 @@ function AddDiscount() {
           <button type="submit">ایجاد کد تخفیف</button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -75,7 +75,7 @@ export default function DataTable({ users, title }) {
   };
 
   return (
-    <div>
+    <div className={styles.main_container}>
       <div>
         <h1 className={styles.title}>
           <span>{title}</span>

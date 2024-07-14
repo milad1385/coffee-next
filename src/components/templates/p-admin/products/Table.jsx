@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import styles from "./table.module.css";
+import styles from "./../comments/table.module.css";
 import { useRouter } from "next/navigation";
 import { FaRegStar, FaStar } from "react-icons/fa";
 export default function DataTable({ products, title }) {
   const router = useRouter();
 
   return (
-    <div>
+    <div className={styles.main_container}>
       <div>
         <h1 className={styles.title}>
           <span>{title}</span>

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styles from "./table.module.css";
+import styles from "./../comments/table.module.css";
 import { useRouter } from "next/navigation";
 import swal from "sweetalert";
 import { showSwal } from "@/utils/helper";
@@ -26,7 +26,7 @@ export default function DataTable({ title, discounts }) {
     });
   };
   return (
-    <div>
+    <div className={styles.main_container}>
       <div>
         <h1 className={styles.title}>
           <span>{title}</span>

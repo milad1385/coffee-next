@@ -22,7 +22,7 @@ function AddProduct() {
     setImages(Array.from(e.target.files));
   };
 
-  console.log(errors);
+
 
   const createProduct = async (data) => {
     console.log(data);
