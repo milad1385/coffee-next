@@ -58,11 +58,23 @@ function GrowthChart() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis style={{fontSize :"13px"}} dataKey="name" />
-        <YAxis style={{fontSize :"13px"}} />
+        <XAxis style={{ fontSize: "13px" }} dataKey="name" />
+        <YAxis unit="ت" style={{ fontSize: "13px" }} />
         <Tooltip />
-        <Line type="monotone" dataKey="prev" stroke="#711D1C" />
-        <Line type="monotone" dataKey="current" stroke="#000" />
+        <Line
+          name="مقدار رشد"
+          unit="تومان"
+          type="monotone"
+          dataKey="prev"
+          stroke="#711D1C"
+        />
+        <Line
+          unit="تومان"
+          name="مقدار رشد"
+          type="monotone"
+          dataKey="current"
+          stroke="#000"
+        />
       </LineChart>
     </ResponsiveContainer>
   );
