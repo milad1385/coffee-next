@@ -21,3 +21,15 @@
   text-align: right;
   width: 50%;
 }
+
+
+@media (max-width : 780px){
+  .dashboard_charts{
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .dashboard_charts section{
+    width: 100%;
+  }
+}
