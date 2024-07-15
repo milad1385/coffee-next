@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EditModal.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,17 +6,19 @@ import schema from "./EditSchema";
 import { showSwal } from "@/utils/helper";
 import { useRouter } from "next/navigation";
 function EditModal({ user, onClose }) {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const {
     register,
     handleSubmit,
-    formState: { errors, isLoading },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: user,
   });
 
   const editUserInfo = async (data) => {
+    setIsLoading(true);
     const res = await fetch(`/api/user`, {
       method: "PUT",
       headers: {
@@ -24,6 +26,8 @@ function EditModal({ user, onClose }) {
       },
       body: JSON.stringify({ userId: user._id, ...data }),
     });
+
+    setIsLoading(false);
 
     if (res.status === 200) {
       onClose();
