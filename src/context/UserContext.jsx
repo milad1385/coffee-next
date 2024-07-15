@@ -7,7 +7,7 @@ function UserProvider({ children }) {
   const [isShow, setIsShow] = useState(false);
   useEffect(() => {
     const getUserInfo = async () => {
-      const res = await fetch(`http://localhost:3000/api/auth/me`);
+      const res = await fetch(`https://coffee-next-eta.vercel.app/api/auth/me`);
       const userInfo = await res.json();
       setUserInfo(userInfo);
     };
