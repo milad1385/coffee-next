@@ -10,7 +10,7 @@ function EditModal({ user, onClose }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isLoading },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: user,
@@ -41,6 +41,7 @@ function EditModal({ user, onClose }) {
       >
         <div>
           <input
+            disabled={isLoading}
             type="text"
             placeholder="نام کاربر را وارد کنید ..."
             {...register("name")}
@@ -51,6 +52,7 @@ function EditModal({ user, onClose }) {
         </div>
         <div>
           <input
+            disabled={isLoading}
             type="text"
             placeholder="ایمیل کاربر را وارد کنید ..."
             {...register("email")}
@@ -61,6 +63,7 @@ function EditModal({ user, onClose }) {
         </div>
         <div>
           <input
+            disabled={isLoading}
             type="text"
             placeholder="شماره کاربر را وارد کنید ..."
             {...register("phone")}
@@ -69,7 +72,9 @@ function EditModal({ user, onClose }) {
             <p className={styles.err_empty}>{errors.phone.message}</p>
           )}
         </div>
-        <button>ویرایش کاربر</button>
+        <button disabled={isLoading}>
+          {isLoading ? "در حال ویرایش ..." : "ویرایش کاربر"}
+        </button>
       </form>
     </div>
   );
