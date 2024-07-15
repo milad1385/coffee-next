@@ -28,7 +28,7 @@ function EditModal({ user, onClose }) {
     if (res.status === 200) {
       onClose();
       showSwal("کاربر با موفقیت آپدیت شد", "success", "خیلی هم عالی", () => {
-        router.refresh();
+        location.reload();
       });
     }
   };
