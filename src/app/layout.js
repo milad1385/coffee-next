@@ -14,6 +14,11 @@ export const metadata = {
   icons: {
     icon: "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/36190/coffee-logo-clipart-md.png",
   },
+  manifest: "/manifest.json",
+};
+
+export const viewport = {
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({ children }) {
