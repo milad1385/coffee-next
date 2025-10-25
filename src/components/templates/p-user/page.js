@@ -9,7 +9,6 @@ import { authUser } from "@/utils/serverHelper";
 const page = async () => {
   connectToDB();
   const user = await authUser();
-  console.log(user);
   const tickets = await ticketsModel
     .find({ user: user._id })
     .limit(3)

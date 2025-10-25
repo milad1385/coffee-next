@@ -5,7 +5,7 @@ const showSwal = (title, icon, buttons, callBack) => {
     title,
     icon,
     buttons,
-  }).then((res) => callBack());
+  }).then(() => callBack?.());
 };
 
 const setToLocalStorage = (data, key) => {

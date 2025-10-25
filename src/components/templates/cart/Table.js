@@ -21,6 +21,7 @@ const Table = () => {
   const [stateSelectedOption, setStateSelectedOption] = useState(null);
   const [changeAddress, setChangeAddress] = useState(false);
   const [copenPrice, setCopenPrice] = useState(0);
+  const [discountApplied, setDiscountApplied] = useState(false);
 
   useEffect(() => {
     dispatch({ type: "LOAD" });
@@ -39,20 +40,15 @@ const Table = () => {
     });
 
     if (res.status === 200) {
-      showSwal(
-        "کد تخفیف با موفقیت اعمال شد",
-        "success",
-        "خیلی هم عالی",
-        async () => {
-          const {
-            discount: { percent },
-          } = await res.json();
-          const totalPrice = (state.totalPrice * percent) / 100;
-          dispatch({ type: "DISCOUNT", price: totalPrice });
-          setCopenPrice(totalPrice);
-          setDiscount("");
-        }
-      );
+      const {
+        discount: { percent },
+      } = await res.json();
+      const totalPrice = (state.totalPrice * percent) / 100;
+      dispatch({ type: "DISCOUNT", price: totalPrice });
+      setCopenPrice(totalPrice);
+      setDiscountApplied(true);
+      setDiscount("");
+      showSwal("کد تخفیف با موفقیت اعمال شد", "success", "خیلی هم عالی");
     } else if (res.status === 410) {
       showSwal("کد تخفیف منقضی شده است", "error", "تلاش مجدد", () => {
         setDiscount("");
@@ -69,25 +65,113 @@ const Table = () => {
   const deleteDiscountHandler = () => {
     document.cookie = "discount=0; path=/; max-age=0";
     setCopenPrice(0);
+    setDiscountApplied(false);
   };
 
   return (
-    <>
+    <div className={totalStyles.cart_container_main}>
+      {state?.basket?.length > 0 && (
+        <div className={totalStyles.totals}>
+          <p className={totalStyles.totals_title}>جمع کل سبد خرید</p>
+
+          <div className={totalStyles.subtotal}>
+            <p>جمع کل </p>
+            <p>{state.totalPrice.toLocaleString("fa")} تومان</p>
+          </div>
+
+          <div className={totalStyles.subtotal}>
+            <p>سود شما </p>
+            <p>
+              {Number(
+                copenPrice && discountApplied ? copenPrice : 0
+              ).toLocaleString("fa-IR")}{" "}
+              تومان
+            </p>
+          </div>
+
+          <p className={totalStyles.motor}>
+            پیک ارسال کننده:{" "}
+            <strong>
+              {stateSelectedOption?.price.toLocaleString("fa") ??
+                "شهر خود را انتخاب کنید"}
+            </strong>
+          </p>
+          <div className={totalStyles.address}>
+            <p>حمل و نقل </p>
+            <span>حمل و نقل به {stateSelectedOption?.label}</span>
+          </div>
+          <p
+            onClick={() => setChangeAddress((prev) => !prev)}
+            className={totalStyles.change_address}
+          >
+            تغییر آدرس
+          </p>
+          {changeAddress && (
+            <div className={totalStyles.address_details}>
+              <Select
+                defaultValue={stateSelectedOption}
+                onChange={setStateSelectedOption}
+                isClearable={true}
+                placeholder={"استان"}
+                isRtl={true}
+                isSearchable={true}
+                options={stateOptions}
+              />
+              <select className={styles.city_select}>
+                <option>شهر خود را انتخاب کنید</option>
+                {stateSelectedOption?.value.map((city) => (
+                  <option value={city} key={crypto.randomUUID()}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+              <input type="number" placeholder="کد پستی" />
+              <button onClick={() => setChangeAddress(false)}>بروزرسانی</button>
+            </div>
+          )}
+
+          <div className={totalStyles.total}>
+            <p>مجموع</p>
+            <p>
+              {(copenPrice > 0
+                ? state.totalPrice - Number(copenPrice)
+                : state.totalPrice
+              ).toLocaleString("fa")}
+              تومان
+            </p>
+          </div>
+          <Link href={"/checkout"}>
+            <button className={totalStyles.checkout_btn}>
+              ادامه جهت تسویه حساب
+            </button>
+          </Link>
+        </div>
+      )}
+
       {state.basket.length > 0 ? (
         <div className={styles.tabel_container}>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th> جمع جزء</th>
+                <th></th>
+                <th>جمع جزء</th>
                 <th>تعداد</th>
                 <th>قیمت</th>
                 <th>محصول</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
               {state.basket.map((item) => (
                 <tr key={item._id}>
+                  <td>
+                    <IoMdClose
+                      className={styles.delete_icon}
+                      onClick={() => {
+                        dispatch({ type: "REMOVE", payload: { id: item.id } });
+                        deleteDiscountHandler();
+                      }}
+                    />
+                  </td>
                   <td>{(item.count * item.price).toLocaleString()} تومان</td>
                   <td className={styles.counter}>
                     <div>
@@ -137,24 +221,19 @@ const Table = () => {
                   </td>
                   <td className={styles.product}>
                     <Image alt="" src={item.image} width={100} height={100} />
-                    <Link href={"/"}>{item.title}</Link>
-                  </td>
-
-                  <td>
-                    <IoMdClose
-                      className={styles.delete_icon}
-                      onClick={() => {
-                        dispatch({ type: "REMOVE", payload: { id: item.id } });
-                        deleteDiscountHandler();
-                      }}
-                    />
+                    <Link
+                      className={styles.productName}
+                      href={`/product/${item.link}`}
+                    >
+                      {item.title}
+                    </Link>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <section>
-            {copenPrice ? (
+          <section className={styles.action_section}>
+            {copenPrice && discountApplied ? (
               <button
                 className={styles.update_btn}
                 onClick={deleteDiscountHandler}
@@ -165,7 +244,7 @@ const Table = () => {
               <button className={styles.update_btn}>بروزرسانی سبد</button>
             )}
             <div>
-              {!copenPrice ? (
+              {!discountApplied ? (
                 <>
                   <button
                     className={styles.set_off_btn}
@@ -181,7 +260,7 @@ const Table = () => {
                   />
                 </>
               ) : (
-                <button className={styles.copen_btn} onClick={sendDiscountCode}>
+                <button className={styles.copen_btn} disabled>
                   کوپن با موفقیت اعمال شد
                 </button>
               )}
@@ -192,85 +271,10 @@ const Table = () => {
         <div className={styles.empty_container}>
           <CiShoppingBasket className={styles.empty_icon} />
           <h3>سبد خرید شما خالی است</h3>
-          <button
-            onClick={() => {
-              router.replace("/");
-            }}
-          >
-            بازگشت به فروشگاه
-          </button>
+          <button onClick={() => router.replace("/")}>بازگشت به فروشگاه</button>
         </div>
       )}
-      <div className={totalStyles.totals}>
-        <p className={totalStyles.totals_title}>جمع کل سبد خرید</p>
-
-        <div className={totalStyles.subtotal}>
-          <p>جمع کل </p>
-          <p>{state.totalPrice.toLocaleString("fa")} تومان</p>
-        </div>
-
-        <div className={totalStyles.subtotal}>
-          <p>سود شما </p>
-          <p>{Number(copenPrice).toLocaleString("fa-IR")} تومان</p>
-        </div>
-
-        <p className={totalStyles.motor}>
-          {" "}
-          پیک ارسال کننده:{" "}
-          <strong>
-            {" "}
-            {stateSelectedOption?.price.toLocaleString("fa") ??
-              "شهر خود را انتخاب کنید"}{" "}
-          </strong>
-        </p>
-        <div className={totalStyles.address}>
-          <p>حمل و نقل </p>
-          <span>حمل و نقل به {stateSelectedOption?.label}</span>
-        </div>
-        <p
-          onClick={() => setChangeAddress((prev) => !prev)}
-          className={totalStyles.change_address}
-        >
-          تغییر آدرس
-        </p>
-        {changeAddress && (
-          <div className={totalStyles.address_details}>
-            <Select
-              defaultValue={stateSelectedOption}
-              onChange={setStateSelectedOption}
-              isClearable={true}
-              placeholder={"استان"}
-              isRtl={true}
-              isSearchable={true}
-              options={stateOptions}
-            />
-            <select className={styles.city_select}>
-              <option>شهر خود را انتخاب کنید</option>
-              {stateSelectedOption?.value.map((city) => (
-                <option value={city} key={crypto.randomUUID()}>
-                  {city}
-                </option>
-              ))}
-            </select>
-            <input type="number" placeholder="کد پستی" />
-            <button onClick={() => setChangeAddress(false)}>بروزرسانی</button>
-          </div>
-        )}
-
-        <div className={totalStyles.total}>
-          <p>مجموع</p>
-          <p>
-            {(state.totalPrice - Number(copenPrice)).toLocaleString("fa")}
-            تومان
-          </p>
-        </div>
-        <Link href={"/checkout"}>
-          <button className={totalStyles.checkout_btn}>
-            ادامه جهت تصویه حساب
-          </button>
-        </Link>
-      </div>
-    </>
+    </div>
   );
 };
 

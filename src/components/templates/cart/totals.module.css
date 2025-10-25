@@ -18,7 +18,7 @@
   padding-bottom: 0.8rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -133,4 +133,27 @@
     border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
+.cart_container_main {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
 
+@media (max-width: 768px) {
+  .cart_container_main {
+    flex-direction: column-reverse;
+  }
+
+  .totals {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .totals_title {
+    font-size: 19px;
+  }
+
+  .subtotal p {
+    font-size: 17px !important;
+  }
+}

@@ -43,7 +43,6 @@
 .product {
   display: flex;
   align-items: center;
-  width: 365px;
 }
 .product img {
   width: 80px;
@@ -198,4 +197,43 @@
   border-radius: 5px;
   border: 0;
   box-shadow: 0 0 10px rgb(223, 223, 223);
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 12px !important;
+  }
+
+  .product img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .price {
+    font-size: 10px;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .productName {
+    font-size: 10px !important;
+  }
+
+  .delete_icon {
+    font-size: 14px;
+  }
+
+  .action_section {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .update_btn {
+    margin-top: 10px;
+    width: 100%;
+  }
 }

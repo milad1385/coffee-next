@@ -37,6 +37,7 @@ const Details = ({ product, isWish, userId }) => {
       image: product.images[0],
       count: 1,
       score: product.score,
+      link: product.link,
     };
 
     dispatch({ type: "ADD_CARD", payload: newProduct });

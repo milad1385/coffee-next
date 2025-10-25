@@ -23,7 +23,6 @@ import { IoMdSettings } from "react-icons/io";
 import { BiSolidDashboard } from "react-icons/bi";
 function MobileNav({ user }) {
   const [isShowOverlay, setIsShowOverlay] = useState(false);
-  console.log(user);
   const showMenuHandler = () => {
     setIsShowOverlay(true);
   };

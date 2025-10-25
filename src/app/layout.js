@@ -4,6 +4,7 @@ import AOSInit from "@/utils/aos";
 import ScrollToTop from "@/utils/SctollToTop";
 import CardProvider from "@/context/CardContext";
 import UserProvider from "@/context/UserContext";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa">
       <body className={inter.className}>
+        <NextTopLoader color="#9d2a29ff" height={5} showSpinner={false} />
         <AOSInit />
         <CardProvider>
           <UserProvider>{children}</UserProvider>
