@@ -25,3 +25,21 @@
   width: 50%;
   margin-top: 3rem;
 }
+
+@media (max-width: 768px) {
+  .maps {
+    flex-direction: column;
+  }
+
+  .maps section {
+    width: 100%;
+  }
+
+  .contents {
+    flex-direction: column;
+  }
+  .contents section,
+  .contents form {
+    width: 100%;
+  }
+}

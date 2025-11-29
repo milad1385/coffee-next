@@ -35,14 +35,31 @@
   font-size: 4.4rem;
 }
 
-
-
-.breadcrumb p{
+.breadcrumb p {
   color: white;
 }
 
-
-
-.breadcrumb a , .breadcrumb span{
+.breadcrumb a,
+.breadcrumb span {
   color: white;
+}
+
+.breadcrumb_title {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumb {
+    padding-top: 90px;
+  }
+
+  .title {
+    font-size: 2.2rem !important;
+  }
 }

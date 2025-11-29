@@ -58,3 +58,38 @@
   margin: 10px 0 !important;
   font-size: 35px;
 }
+
+@media (max-width: 768px) {
+  .container section {
+    grid-template-columns: 1fr;
+  }
+
+  .container section div p {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .container span {
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+  }
+
+  .container section p{
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .main div p{
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .main .title{
+    font-size: 20px;
+  }
+}

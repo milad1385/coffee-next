@@ -7,6 +7,8 @@ export async function middleware(request) {
   const accessToken = cookies().get("accessToken")?.value;
   const refreshToken = cookies().get("refreshToken")?.value;
 
+
+  
   const res = await fetch(`https://coffee-next-eta.vercel.app/api/auth/me`, {
     headers: {
       Authorization: `${accessToken}`,
@@ -15,14 +17,11 @@ export async function middleware(request) {
 
   // handle refresh Token
   if (res.status === 401) {
-    const refresh = await fetch(
-      `https://coffee-next-eta.vercel.app/api/auth/refresh`,
-      {
-        headers: {
-          Authorization: `${refreshToken}`,
-        },
-      }
-    );
+    const refresh = await fetch(`https://coffee-next-eta.vercel.app/api/auth/refresh`, {
+      headers: {
+        Authorization: `${refreshToken}`,
+      },
+    });
     if (refresh.status === 200) {
       const info = await refresh.json();
       response.cookies.set("accessToken", info.cookie, {
