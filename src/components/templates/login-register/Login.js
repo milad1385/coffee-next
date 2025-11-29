@@ -4,12 +4,14 @@ import Link from "next/link";
 import Sms from "./Sms";
 import { showSwal } from "@/utils/helper";
 import { useRouter } from "next/navigation";
+import Spinner from "@/components/modules/spinner/Spinner";
 
 const Login = ({ showRegisterForm }) => {
   const router = useRouter();
   const [isLoginWithOtp, setIsLoginWithOtp] = useState(false);
   const [identifire, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const hideOtpForm = () => setIsLoginWithOtp(false);
 
@@ -31,6 +33,7 @@ const Login = ({ showRegisterForm }) => {
         () => {}
       );
     }
+    setIsLoading(true);
 
     const res = await fetch(`/api/auth/signin`, {
       method: "POST",
@@ -39,6 +42,8 @@ const Login = ({ showRegisterForm }) => {
       },
       body: JSON.stringify({ identifire, password }),
     });
+
+    setIsLoading(false);
 
     if (res.status === 200) {
       showSwal("کاربر با موفقیت لاگین شد", "success", "ورود به پنل", () => {
@@ -85,7 +90,7 @@ const Login = ({ showRegisterForm }) => {
               <p>مرا به یاد داشته باش</p>
             </div>
             <button className={styles.btn} onClick={loginHandler}>
-              ورود
+              {isLoading ? <Spinner /> : "ورود"}
             </button>
             <Link href={"/forget-password"} className={styles.forgot_pass}>
               رمز عبور را فراموش کرده اید؟

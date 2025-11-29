@@ -50,9 +50,13 @@
 .btn {
   padding: 0.8rem;
   cursor: pointer;
-  color: white !important;
   font-family: shabnam;
   background-color: rgb(52, 24, 14);
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .forgot_pass {

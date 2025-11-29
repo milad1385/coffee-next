@@ -6,10 +6,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import registerSchema from "./registerSchema";
 import { showSwal } from "@/utils/helper";
+import Spinner from "@/components/modules/spinner/Spinner";
 const Register = ({ showloginForm }) => {
   const router = useRouter();
   const [isRegisterWithPass, setIsRegisterWithPass] = useState(false);
   const [isRegisterWithOtp, setIsRegisterWithOtp] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const hideOtpForm = () => setIsRegisterWithOtp(false);
 
@@ -23,6 +25,7 @@ const Register = ({ showloginForm }) => {
   });
 
   const registerUserHandler = async (data) => {
+    setIsLoading(true);
     const res = await fetch(`/api/auth/signup`, {
       method: "POST",
       headers: {
@@ -30,6 +33,7 @@ const Register = ({ showloginForm }) => {
       },
       body: JSON.stringify(data),
     });
+    setIsLoading(false);
 
     if (res.status === 201) {
       showSwal("کاربر با موفقیت ثبت نام شد", "success", "ورود به پنل", () => {
@@ -116,7 +120,7 @@ const Register = ({ showloginForm }) => {
                 onClick={() => setIsRegisterWithPass(true)}
                 className={styles.btn}
               >
-                ثبت نام با رمزعبور
+                {isLoading ? <Spinner /> : " ثبت نام با رمزعبور"}
               </button>
             )}
             {!isRegisterWithPass && (
