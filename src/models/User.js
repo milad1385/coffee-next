@@ -25,7 +25,7 @@ const schema = mongoose.Schema(
     refreshToken: String,
     image: {
       type: String,
-      default: "https://coffee-next-eta.vercel.app/uploads/user.png",
+      default: "https://coffeeset.vercel.app/uploads/user.png",
       required: false,
     },
   },

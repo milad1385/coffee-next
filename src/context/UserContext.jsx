@@ -7,7 +7,9 @@ function UserProvider({ children }) {
   const [isShow, setIsShow] = useState(false);
   useEffect(() => {
     const getUserInfo = async () => {
-      const res = await fetch(`http://localhost:3000/api/auth/me`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/me`,
+      );
       const userInfo = await res.json();
       setUserInfo(userInfo);
     };

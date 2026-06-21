@@ -34,7 +34,6 @@ export async function POST(req) {
     };
 
     const isValid = await validator(datas);
-    console.log(isValid);
 
     if (isValid !== true) {
       return Response.json({ msg: isValid }, { status: 422 });

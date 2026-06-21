@@ -37,7 +37,7 @@ export async function PUT(req, { params }) {
           name,
           phone,
           email,
-          image: `http://localhost:3000/uploads/${filename}`,
+          image: `https://coffeeset.vercel.app/uploads/${filename}`,
         }
       );
 

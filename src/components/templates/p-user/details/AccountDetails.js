@@ -144,7 +144,7 @@ function AccountDetails() {
                 src={
                   tempImage
                     ? tempImage
-                    : "http://localhost:3000/uploads/user.png"
+                    : "https://coffeeset.vercel.app/uploads/user.png"
                 }
                 alt=""
               />
