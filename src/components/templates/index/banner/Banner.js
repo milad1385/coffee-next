@@ -1,16 +1,21 @@
 "use client";
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
 
 function Banner() {
+  const sliders = [
+    { id: 1, image: "/images/slide1.jpg" },
+    { id: 2, image: "/images/slide2.jpg" },
+    { id: 3, image: "/images/slide3.jpg" },
+    { id: 4, image: "/images/slide4.jpg" },
+    { id: 5, image: "/images/slide5.jpg" },
+  ];
   return (
     <Swiper
       rewind={true}
@@ -20,24 +25,16 @@ function Banner() {
       modules={[Navigation]}
       className="mySwiper home-slider"
     >
-      <SwiperSlide>
-        <img
-          src="https://set-coffee.com/wp-content/uploads/2023/12/slide.jpg"
-          alt="Slide"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://set-coffee.com/wp-content/uploads/2021/10/winter-slie.jpg"
-          alt="Slide"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://set-coffee.com/wp-content/uploads/2022/06/fall.jpg"
-          alt="Slide"
-        />
-      </SwiperSlide>
+      {sliders.map((slide) => (
+        <SwiperSlide key={slide.id}>
+          <Image
+            width={1920}
+            height={1080}
+            src={slide.image}
+            alt={slide.image}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
