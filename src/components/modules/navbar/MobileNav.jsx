@@ -58,7 +58,7 @@ function MobileNav({ user }) {
             </li>
             <li>
               <FaStore />
-              <Link href="/category">فروشگاه</Link>
+              <Link href="/product">فروشگاه</Link>
             </li>
             <li>
               <FaBook />
