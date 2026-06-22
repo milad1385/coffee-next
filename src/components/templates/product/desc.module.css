@@ -1,5 +1,7 @@
 .content {
   color: #555555;
+  text-align: justify;
+  line-height: 2;
 }
 
 @media (max-width: 780px) {
