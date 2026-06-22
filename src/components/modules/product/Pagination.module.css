@@ -1,0 +1,156 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+/* دکمه‌های قبلی و بعدی */
+.pageBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  background: white;
+  color: #2d3436;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: #711d1c;
+  border-color: #711d1c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(113, 29, 28, 0.3);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.prevNextBtn {
+  min-width: 100px;
+  justify-content: center;
+}
+
+/* شماره صفحات */
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pageNumber {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  background: white;
+  color: #2d3436;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* .pageNumber:hover:not(.active) {
+  background: #f8f9fa;
+  border-color: #711d1c;
+  transform: translateY(-2px);
+} */
+
+.pageNumber.active {
+  background: #711d1c;
+  border-color: #711d1c;
+  color: white;
+  box-shadow: 0 4px 12px rgba(113, 29, 28, 0.3);
+}
+
+.ellipsis {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.prevIcon,
+.nextIcon {
+  rotate: 180deg;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .pagination {
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .pageBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+
+  .pageNumber {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .ellipsis {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.3rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .pageBtn {
+    /* padding: 0.4rem 0.7rem; */
+    font-size: 0.7rem;
+    min-width: 60px;
+    gap: 0.3rem;
+  }
+
+  .pageBtn span {
+    display: none;
+  }
+
+  .pageNumber {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+    border-radius: 6px;
+  }
+
+  .ellipsis {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
