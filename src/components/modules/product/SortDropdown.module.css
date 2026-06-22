@@ -1,0 +1,45 @@
+/* app/category/SortDropdown.module.css */
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8f9fa;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.sortWrapper:hover {
+  background: #e9ecef;
+}
+
+.sortIcon {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.sortWrapper label {
+  color: #495057;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sortSelect {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #212529;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sortSelect:focus {
+  outline: none;
+}
+
+.sortSelect option {
+  background: white;
+}
