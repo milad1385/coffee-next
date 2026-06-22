@@ -88,8 +88,7 @@ const Footer = () => {
       <hr />
       <div className={`container ${styles.copy}`}>
         <p className={styles.copyRight}>
-          {" "}
-          2024
+          2026
           <MdOutlineCopyright /> تمام حقوق متعلق است به <strong></strong>{" "}
           <strong>میلاد سلامیان</strong>
         </p>
