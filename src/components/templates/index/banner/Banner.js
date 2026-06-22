@@ -14,7 +14,6 @@ function Banner() {
     { id: 2, image: "/images/slide2.jpg" },
     { id: 3, image: "/images/slide3.jpg" },
     { id: 4, image: "/images/slide4.jpg" },
-    { id: 5, image: "/images/slide5.jpg" },
   ];
   return (
     <Swiper
