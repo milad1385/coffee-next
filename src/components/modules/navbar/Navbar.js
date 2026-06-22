@@ -27,7 +27,7 @@ async function Navbar() {
               <Link href="/">صفحه اصلی</Link>
             </li>
             <li>
-              <Link href="/category">فروشگاه</Link>
+              <Link href="/product">فروشگاه</Link>
             </li>
             <li>
               <Link href="/blog">وبلاگ</Link>
