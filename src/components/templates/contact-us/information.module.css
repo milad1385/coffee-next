@@ -1,10 +1,10 @@
-.Information p {
+.infoTitle {
   font-size: 22px;
   margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-top: 1.1rem;
 }
 .Information span {
-  color: gray;
+  color: rgb(99, 99, 99);
   font-size: 14px;
 }
 .Information div p {
@@ -13,14 +13,34 @@
 .Information div:nth-child(5) svg {
   margin-top: 0.7rem;
 }
-.Information div {
+/* .Information div {
   display: flex;
+  align-items: center;
   justify-content: right;
   gap: 14px;
   flex-direction: row-reverse;
   align-items: flex-start;
-  color: gray;
-}
+  color: rgb(56, 55, 55);
+} */
 .Information div svg {
   font-size: 2.2rem;
+}
+
+.infoBox {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  direction: rtl !important;
+  color: #5d5d5d;
+}
+
+@media (max-width: 557px) {
+  .infoTitle {
+    font-size: 16px;
+  }
+
+  .Information span {
+    font-size: 18px !important;
+  }
 }

@@ -37,8 +37,8 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(submitMessage)} className={styles.form}>
-      <span>فرم تماس با ما</span>
-      <p>برای تماس با ما می توانید فرم زیر را تکمیل کنید</p>
+      <span className={styles.contactFormTitle}>فرم تماس با ما</span>
+      <p className={styles.contactFormDesc}>برای تماس با ما می توانید فرم زیر را تکمیل کنید</p>
       <div className={styles.groups}>
         <div className={styles.group}>
           <label>نام و نام خانوادگی</label>

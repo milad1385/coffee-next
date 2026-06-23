@@ -17,13 +17,15 @@ const ContactUs = async () => {
         <main className={styles.maps}>
           <section>
             <Map position={[35.7223, 50.9758]} center={[35.7223, 50.9758]}>
-              <span> فروشگاه ما</span>
-              <h3>آدرس فروشگاه حضوری قهوه ست (شعبه جم)</h3>
-              <p>
+              <span className={styles.storeName}> فروشگاه ما</span>
+              <h3 className={styles.storeDesc}>
+                آدرس فروشگاه حضوری قهوه ست (شعبه جم)
+              </h3>
+              <p className={styles.address}>
                 تهران – خ کریمخان زند – خ قائم مقام فراهانی – ابتدای خ فجر(جم) –
                 شماره ۱۰
               </p>
-              <p>021-88305827</p>
+              <p className={styles.phoneNumber}>021-88305827</p>
               <Link href="/about-us">درباره فروشگاه</Link>
             </Map>
           </section>
@@ -32,13 +34,15 @@ const ContactUs = async () => {
               position={[35.70153474690238, 51.41497422314844]}
               center={[35.70153474690238, 51.41497422314844]}
             >
-              <span> فروشگاه ما</span>
-              <h3>آدرس فروشگاه حضوری قهوه ست (شعبه جم)</h3>
-              <p>
+              <span className={styles.storeName}> فروشگاه ما</span>
+              <h3 className={styles.storeDesc}>
+                آدرس فروشگاه حضوری قهوه ست (شعبه جم)
+              </h3>
+              <p className={styles.address}>
                 تهران – خ کریمخان زند – خ قائم مقام فراهانی – ابتدای خ فجر(جم) –
                 شماره ۱۰
               </p>
-              <p>021-88305827</p>
+              <p className={styles.phoneNumber}>021-88305827</p>
               <Link href="/about-us">درباره فروشگاه</Link>
             </Map>
           </section>
