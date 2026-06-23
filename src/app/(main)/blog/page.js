@@ -7,7 +7,6 @@ import styles from "@/styles/articles.module.css";
 
 const page = ({ searchParams }) => {
   const page = searchParams.page || 1;
-  console.log(page);
 
   return (
     <div>
