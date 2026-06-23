@@ -9,32 +9,38 @@ import {
   FaTelegram,
   FaTwitter,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const Card = () => {
   return (
     <div className={styles.card}>
-      <Link className={styles.img_container} href={"/article/123"}>
-        <img
-          src="https://set-coffee.com/wp-content/uploads/elementor/thumbs/-%D9%82%D9%87%D9%88%D9%87-%D8%A8%D8%A7-%D8%B4%DB%8C%D8%B1-qi8xuncj4ordgstrl43mbg5jfj1ezzamf6v9rnitn0.jpg"
-          alt=""
+      <Link className={styles.img_container} href={"/blog/123"}>
+        <Image
+          src="/images/articles/blog-1.png"
+          alt="article1"
+          width={1920}
+          height={1080}
         />
       </Link>
       <div className={styles.date}>
-        <span>24</span>
-        <span>بهمن</span>
+        <span>2</span>
+        <span>تیر</span>
       </div>
       <div className={styles.details}>
         <span className={styles.tag}>قهوه</span>
-        <Link href={"/article/123"} className={styles.title}>
-          مصرف قهوه با شیر برای کاهش التهاب
+        <Link href={"/blog/123"} className={styles.title}>
+          روش تهیه قهوه با شیر
         </Link>
         <div>
           <p>نویسنده</p>
-          <img
-            src="https://secure.gravatar.com/avatar/665a1a4dc7cc052eaa938253ef413a78?s=32&d=mm&r=g"
+          <Image
+            src="/uploads/user.png"
             alt=""
+            width={1920}
+            height={1080}
+            className={styles.avatar}
           />
-          <p>Mohebi</p>
+          <p>محمد اکبری</p>
           <div>
             <MdOutlineSms />
             <span>0</span>
