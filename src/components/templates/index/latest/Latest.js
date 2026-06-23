@@ -15,7 +15,7 @@ const Latest = async () => {
           <p>آخرین محصولات</p>
           <span>پیش به سوی کیفیت</span>
         </div>
-        <Link className={styles.link} href={"/category"}>
+        <Link className={styles.link} href={"/product"}>
           مشاهده همه <FaChevronLeft />{" "}
         </Link>
       </section>
