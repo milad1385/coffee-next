@@ -9,6 +9,7 @@ import Breadcrumb from "@/components/modules/breadcrumb/Breadcrumb";
 import ProductsFilters from "@/components/modules/product/ProductsFilters";
 import Pagination from "@/components/modules/product/Pagination";
 import { productsData } from "@/utils/stateData";
+import ProductSort from "@/components/modules/product/ProductSort";
 
 const page = async ({ searchParams }) => {
   await connectToDB();
@@ -27,54 +28,53 @@ const page = async ({ searchParams }) => {
   const categories = [...new Set(productsData.map((p) => p.category))];
 
   return (
-    <>
-      <div className={styles.productspage}>
-        <Navbar />
-        <Breadcrumb route="لیست محصولات" />
-        <ProductsFilters
-          filterContent={
-            <ProductFilters
-              isMobile
-              brands={brands}
-              categories={categories}
-              currentFilters={{
-                brand,
-                category,
-                minPrice,
-                maxPrice,
-                search,
-                sort,
-              }}
-            />
-          }
-          currentSort={sort}
-        />
-        <div className={styles.container}>
-          <main className={styles.mainContent}>
-            <main data-aos="fade-up" className={styles.products}>
-              <ProductsItems products={productsList} />
-            </main>
-            <Pagination currentPage={page} totalPages={10} />
+    <div className={styles.productspage}>
+      <Navbar />
+      <Breadcrumb route="لیست محصولات" />
+      <ProductsFilters
+        filterContent={
+          <ProductFilters
+            isMobile
+            brands={brands}
+            categories={categories}
+            currentFilters={{
+              brand,
+              category,
+              minPrice,
+              maxPrice,
+              search,
+              sort,
+            }}
+          />
+        }
+        currentSort={sort}
+      />
+      <div className={styles.container}>
+        <main className={styles.mainContent}>
+          <ProductSort />
+          <main data-aos="fade-up" className={styles.products}>
+            <ProductsItems products={productsList} />
           </main>
-          <aside className={styles.sidebar}>
-            <ProductFilters
-              brands={brands}
-              categories={categories}
-              currentFilters={{
-                brand,
-                category,
-                minPrice,
-                maxPrice,
-                search,
-                sort,
-              }}
-            />
-          </aside>
-        </div>
-
-        <Footer />
+          <Pagination currentPage={page} totalPages={10} />
+        </main>
+        <aside className={styles.sidebar}>
+          <ProductFilters
+            brands={brands}
+            categories={categories}
+            currentFilters={{
+              brand,
+              category,
+              minPrice,
+              maxPrice,
+              search,
+              sort,
+            }}
+          />
+        </aside>
       </div>
-    </>
+
+      <Footer />
+    </div>
   );
 };
 
