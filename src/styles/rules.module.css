@@ -20,3 +20,13 @@
 .container p:nth-child(2) {
   margin-bottom: 0px;
 }
+
+.container p {
+  line-height: 32px;
+}
+
+@media (max-width: 567px) {
+  .container p {
+    line-height: 28px;
+  }
+}
