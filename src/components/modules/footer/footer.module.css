@@ -90,6 +90,13 @@
   padding: 20px 0px;
   font-size: 12px;
   text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.copyRightIcon {
+  margin-top: -8px;
 }
 
 .footer hr {

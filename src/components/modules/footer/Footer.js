@@ -34,7 +34,7 @@ const Footer = () => {
             href={"/article/123"}
             data="۱۷ آبان ۱۴۰۲ "
             comments="بدون دیدگاه"
-            img="https://set-coffee.com/wp-content/uploads/elementor/thumbs/IMG_20230920_130854_091-qconsqrfwm7t626t2hckfjifv0kdd7cofsbfd1jcig.jpg"
+            img="/images/articles/blog-1.png"
             title="افزایش انرژی با پودر قهوه فوری"
           />
 
@@ -44,7 +44,7 @@ const Footer = () => {
             href={"/article/123"}
             data="۱۷ آبان ۱۴۰۲ "
             comments="بدون دیدگاه"
-            img="https://set-coffee.com/wp-content/uploads/elementor/thumbs/IMG_20230920_130854_091-qconsqrfwm7t626t2hckfjifv0kdd7cofsbfd1jcig.jpg"
+            img="/images/articles/blog-2.png"
             title="افزایش انرژی با پودر قهوه فوری"
           />
         </section>
@@ -65,10 +65,10 @@ const Footer = () => {
           <div>
             <h4>دسترسی سریع</h4>
             <li>
-              <Link href={"/category"}> فروشگاه </Link>
+              <Link href={"/product"}> فروشگاه </Link>
             </li>
             <li>
-              <Link href={"/articles"}> مقالات </Link>
+              <Link href={"/blog"}> مقالات </Link>
             </li>
             <li>
               <Link href={"/cart"}>سبد خرید</Link>
@@ -88,9 +88,9 @@ const Footer = () => {
       <hr />
       <div className={`container ${styles.copy}`}>
         <p className={styles.copyRight}>
-          2026
-          <MdOutlineCopyright /> تمام حقوق متعلق است به <strong></strong>{" "}
-          <strong>میلاد سلامیان</strong>
+          تمام حقوق متعلق است به{" "}
+          <strong>میلاد سلامیان</strong> است
+          <MdOutlineCopyright className={styles.copyRightIcon} />
         </p>
       </div>
     </footer>
