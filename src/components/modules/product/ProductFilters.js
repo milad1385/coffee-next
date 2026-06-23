@@ -10,7 +10,6 @@ import {
   FaUndo,
 } from "react-icons/fa";
 import styles from "./ProductFilters.module.css";
-import SortDropdown from "./SortDropdown";
 
 const ProductFilters = ({ brands, categories, currentFilters, isMobile }) => {
   const router = useRouter();
@@ -167,7 +166,6 @@ const ProductFilters = ({ brands, categories, currentFilters, isMobile }) => {
             className={styles.priceInput}
           />
         </div>
-        {!isMobile && <SortDropdown currentSort={currentFilters.sort} />}
       </div>
 
       <button onClick={resetFilters} className={styles.resetBtn}>
