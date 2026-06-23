@@ -1,0 +1,30 @@
+.sortContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+
+.sortContainer div {
+  background-color: #f0f0f0;
+  padding: 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sortContainer div.active {
+  background-color: #711d1c;
+  color: white;
+}
+
+.sortItemActive {
+  background-color: #711d1c !important;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sortContainer {
+    display: none;
+  }
+}
