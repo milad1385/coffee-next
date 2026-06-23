@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import Department from "@/models/Department";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     title: {
       type: String,
@@ -15,6 +15,6 @@ const schema = mongoose.Schema(
 );
 
 const model =
-  mongoose.models.SubDepartment || mongoose.model("SubDepartment", schema);
+  mongoose.models?.SubDepartment || mongoose.model("SubDepartment", schema);
 
 export default model;

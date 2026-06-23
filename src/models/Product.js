@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import commentsModel from "@/models/Comment";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     title: {
       type: String,
@@ -62,6 +62,6 @@ schema.virtual("comments", {
 });
 
 
-const model = mongoose.models.Product || mongoose.model("Product", schema);
+const model = mongoose.models?.Product || mongoose.model("Product", schema);
 
 export default model;

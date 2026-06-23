@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import productsModel from "@/models/Product";
 import usersModel from "@/models/User";
-const schema = mongoose.Schema(
+
+const schema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -20,7 +21,7 @@ const schema = mongoose.Schema(
       required: true,
     },
     product: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Product",
     },
     isAccept: {
@@ -28,14 +29,14 @@ const schema = mongoose.Schema(
       default: false,
     },
     user: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const model = mongoose.models.Comment || mongoose.model("Comment", schema);
+const model = mongoose.models?.Comment || mongoose.model("Comment", schema);
 
 export default model;

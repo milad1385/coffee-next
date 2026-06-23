@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     phone: {
       type: String,
@@ -13,6 +13,6 @@ const schema = mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.models.Ban || mongoose.model("Ban", schema);
+const model = mongoose.models?.Ban || mongoose.model("Ban", schema);
 
 export default model;

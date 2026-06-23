@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import usersModel from "@/models/User";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     code: {
       type: String,
@@ -27,6 +27,6 @@ const schema = mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.models.Discount || mongoose.model("Discount", schema);
+const model = mongoose.models?.Discount || mongoose.model("Discount", schema);
 
 export default model;

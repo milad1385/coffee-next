@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     title: {
       type: String,
@@ -10,6 +10,6 @@ const schema = mongoose.Schema(
 );
 
 const model =
-  mongoose.models.Department || mongoose.model("Department", schema);
+  mongoose.models?.Department || mongoose.model("Department", schema);
 
 export default model;

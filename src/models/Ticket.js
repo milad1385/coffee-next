@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import usersModel from "@/models/User";
 import departmentsModel from "@/models/Department";
 import SubDepartment from "@/models/SubDepartment";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     title: {
       type: String,
@@ -51,6 +51,6 @@ const schema = mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.models.Ticket || mongoose.model("Ticket", schema);
+const model = mongoose.models?.Ticket || mongoose.model("Ticket", schema);
 
 export default model;

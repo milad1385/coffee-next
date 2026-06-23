@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import usersModel from "@/models/User";
 import productsModel from "@/models/Product";
-const schema = mongoose.Schema(
+const schema =new mongoose.Schema(
   {
     user: {
       type: mongoose.Types.ObjectId,
@@ -17,6 +17,6 @@ const schema = mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.models.Wishlist || mongoose.model("Wishlist", schema);
+const model = mongoose.models?.Wishlist || mongoose.model("Wishlist", schema);
 
 export default model;

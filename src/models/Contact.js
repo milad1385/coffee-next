@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const schema = mongoose.Schema(
+const schema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -27,6 +27,6 @@ const schema = mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.models.Contact || mongoose.model("Contact", schema);
+const model = mongoose.models?.Contact || mongoose.model("Contact", schema);
 
 export default model;
