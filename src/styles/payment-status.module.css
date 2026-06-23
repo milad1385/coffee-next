@@ -1,0 +1,319 @@
+/* styles/payment-status.module.css */
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  direction: rtl;
+}
+
+.box {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.successBox {
+  border-color: #711d1c;
+  background: linear-gradient(to bottom, #ffffff, #faf7f7);
+}
+
+.failedBox {
+  border-color: #dc3545;
+  background: linear-gradient(to bottom, #ffffff, #fdf7f7);
+}
+
+/* آیکون و عنوان */
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.successIcon {
+  font-size: 4.5rem;
+  color: #711d1c;
+  animation: scaleIn 0.5s ease;
+}
+
+.failedIcon {
+  font-size: 4.5rem;
+  color: #dc3545;
+  animation: shake 0.5s ease;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+}
+
+/* پیام */
+.message {
+  text-align: center;
+  color: #636e72;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+/* اطلاعات سفارش */
+.orderInfo {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.infoItem:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.infoItem:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #adb5bd;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 0.95rem;
+  color: #2d3436;
+  font-weight: 500;
+}
+
+.amount {
+  color: #711d1c;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* دکمه‌ها */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: #711d1c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* .primaryBtn:hover {
+  background: #8a2321;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(113, 29, 28, 0.4);
+} */
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #f8f9fa;
+  color: #2d3436;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* .secondaryBtn:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+} */
+
+.secondaryBtn svg {
+  font-size: 1.1rem;
+}
+
+/* لینک‌های کمکی */
+.helpLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.helpLink {
+  color: #6c757d;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.helpLink:hover {
+  color: #711d1c;
+}
+
+.separator {
+  color: #dee2e6;
+}
+
+/* انیمیشن‌ها */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .container {
+    margin: 2rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .box {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .successIcon,
+  .failedIcon {
+    font-size: 3.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .infoItem:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .infoItem:nth-child(5) {
+    grid-column: 1;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .helpLinks {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 1.5rem auto;
+  }
+
+  .box {
+    padding: 1.25rem 1rem;
+    border-radius: 12px;
+  }
+
+  .successIcon,
+  .failedIcon {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .orderInfo {
+    padding: 1rem;
+  }
+
+  .value {
+    font-size: 0.85rem;
+  }
+
+  .amount {
+    font-size: 1rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+  }
+}
