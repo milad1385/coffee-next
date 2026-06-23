@@ -11,12 +11,13 @@
   opacity: 1 !important;
 }
 .stepper_bg {
+  background-color: #711d1c;
   background-image: url(https://set-coffee.com/wp-content/uploads/2022/06/back1.jpg);
   background-size: cover;
   background-position: center center;
   margin-bottom: 40px;
-  padding: 0 55px;
-  padding-top: 182px;
+  /* padding: 0 55px; */
+  padding-top: 160px;
 }
 .stepper p,
 .stepper a {
@@ -39,12 +40,18 @@
   }
 
   .stepper a,
-  .stepper i , 
+  .stepper i,
   .stepper p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
-  .stepper_bg{
+  .stepper_bg {
     padding-top: 90px;
+  }
+}
+
+@media (max-width: 567px) {
+  .stepper_bg {
+    padding-top: 65px;
   }
 }
