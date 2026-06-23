@@ -37,7 +37,7 @@ const Promote = () => {
               <Link href="/about-us">
                 <button className={styles.red_btn}>بیشتر بخوانید</button>
               </Link>
-              <Link href="/category">
+              <Link href="/product">
                 <button>فروشگاه</button>
               </Link>
             </div>
