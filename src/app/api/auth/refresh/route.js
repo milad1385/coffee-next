@@ -26,6 +26,7 @@ export async function GET(req) {
     cookies().set("accessToken", newAccessToken, {
       httpOnly: true,
       path: "/",
+      maxAge: 30,
     });
     return Response.json({
       msg: "new accessToken generated successfully :)",

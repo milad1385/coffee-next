@@ -27,7 +27,7 @@ export async function POST(req) {
         {
           msg: "name or email or phone is already exist :)",
         },
-        { status: 419 }
+        { status: 419 },
       );
     }
 
@@ -51,7 +51,7 @@ export async function POST(req) {
       value: `${accessToken}`,
       httpOnly: true,
       path: "/",
-      maxAge: 60,
+      maxAge: 30,
     });
     cookies().set({
       name: "refreshToken",
@@ -63,7 +63,7 @@ export async function POST(req) {
       { msg: "User signed up successfully :)" },
       {
         status: 201,
-      }
+      },
     );
   } catch (err) {
     console.log(err);

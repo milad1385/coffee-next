@@ -34,7 +34,7 @@ async function middleware(request) {
           headers: {
             Authorization: refreshToken,
           },
-        }
+        },
       );
 
       if (refresh.status === 200) {
@@ -45,7 +45,7 @@ async function middleware(request) {
           value: info.cookie,
           httpOnly: true,
           path: "/",
-          maxAge: 15 * 60,
+          maxAge: 30,
           secure: process.env.NODE_ENV === "production",
           sameSite: "lax",
         });
@@ -84,7 +84,7 @@ async function middleware(request) {
           headers: {
             Authorization: refreshToken,
           },
-        }
+        },
       );
 
       if (refresh.status === 200) {
@@ -95,7 +95,7 @@ async function middleware(request) {
           value: info.cookie,
           httpOnly: true,
           path: "/",
-          maxAge: 15 * 60,
+          maxAge: 30,
           secure: process.env.NODE_ENV === "production",
           sameSite: "lax",
         });

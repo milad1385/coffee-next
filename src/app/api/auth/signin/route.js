@@ -24,7 +24,7 @@ export async function POST(req) {
     if (!user) {
       return Response.json(
         { msg: "email or phone is not founded :(" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -32,7 +32,7 @@ export async function POST(req) {
     if (!isValidPassword) {
       return Response.json(
         { msg: "email or phone is not founded :(" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -45,7 +45,7 @@ export async function POST(req) {
         $set: {
           refreshToken,
         },
-      }
+      },
     );
 
     cookies().set({
@@ -53,7 +53,7 @@ export async function POST(req) {
       value: `${accessToken}`,
       httpOnly: true,
       path: "/",
-      maxAge: 14000,
+      maxAge: 30,
     });
     cookies().set({
       name: "refreshToken",
@@ -66,7 +66,7 @@ export async function POST(req) {
       { msg: "User logged in successfully :)" },
       {
         status: 200,
-      }
+      },
     );
   } catch (err) {
     console.log(err);
