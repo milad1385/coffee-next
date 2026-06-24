@@ -75,3 +75,9 @@
     gap: 80px;
   }
 }
+
+@media (max-width: 557px) {
+  .title {
+    font-size: 18px;
+  }
+}
