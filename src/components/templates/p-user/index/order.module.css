@@ -10,19 +10,37 @@
   margin: 1rem auto;
   align-items: center;
 }
-.card div:nth-child(1) div {
+
+.deliver {
+  background-color: #008d09;
   display: flex;
-  gap: 5px;
   align-items: center;
-  position: relative;
-  bottom: 5px;
-  left: 16px;
-  justify-content: right;
-  flex-direction: row-reverse;
+  justify-content: center;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 .card img {
   width: 50px;
 }
 .price {
   margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+  .orderTitle {
+    font-size: 14px;
+  }
+
+  .deliver {
+    font-size: 14px;
+  }
+
+  .orderTime {
+    font-size: 14px !important;
+  }
+  .price {
+    font-size: 14px !important;
+  }
 }

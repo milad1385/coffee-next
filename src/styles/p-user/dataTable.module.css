@@ -1,9 +1,8 @@
-
 .Table_container::-webkit-scrollbar {
   height: 10px !important;
 }
 
-.Table_Container::-webkit-scrollbar-thumb{
+.Table_Container::-webkit-scrollbar-thumb {
   background-color: #711d1c !important;
   height: 5px;
 }
@@ -182,5 +181,11 @@
 
   .table {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title span {
+    font-size: 18px;
   }
 }
