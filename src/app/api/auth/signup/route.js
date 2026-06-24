@@ -51,7 +51,7 @@ export async function POST(req) {
       value: `${accessToken}`,
       httpOnly: true,
       path: "/",
-      maxAge: 30,
+      maxAge: 900,
     });
     cookies().set({
       name: "refreshToken",

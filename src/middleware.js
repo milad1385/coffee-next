@@ -45,7 +45,7 @@ async function middleware(request) {
           value: info.cookie,
           httpOnly: true,
           path: "/",
-          maxAge: 30,
+          maxAge: 900,
           secure: process.env.NODE_ENV === "production",
           sameSite: "lax",
         });
@@ -95,7 +95,7 @@ async function middleware(request) {
           value: info.cookie,
           httpOnly: true,
           path: "/",
-          maxAge: 30,
+          maxAge: 900,
           secure: process.env.NODE_ENV === "production",
           sameSite: "lax",
         });
