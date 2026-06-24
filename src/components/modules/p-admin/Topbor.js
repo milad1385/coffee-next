@@ -1,14 +1,8 @@
 "use client";
-import { useEffect } from "react";
+import { IoIosNotifications, IoIosSearch } from "react-icons/io";
 import styles from "../p-user/topbar.module.css";
-import { IoIosSearch, IoIosNotifications } from "react-icons/io";
-import { useRouter } from "next/navigation";
 import MenuIcon from "./MenuIcon";
 const Topbar = ({ userInfo }) => {
-  const router = useRouter();
-  useEffect(() => {
-    router.refresh();
-  }, []);
   return (
     <>
       <div className={styles.topbar}>

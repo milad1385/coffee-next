@@ -16,11 +16,14 @@ const page = async () => {
   return (
     <Layout>
       <main className={styles.main_container}>
-        <DataTable
-          comments={JSON.parse(JSON.stringify(comments))}
-          title="لیست کامنت‌ها"
-        />
-        {comments.length === 0 && <p>کامنتی وجود ندارد</p>}
+        {comments.length === 0 ? (
+          <p className={styles.empty}>کامنتی وجود ندارد</p>
+        ) : (
+          <DataTable
+            comments={JSON.parse(JSON.stringify(comments))}
+            title="لیست کامنت ها"
+          />
+        )}
       </main>
     </Layout>
   );

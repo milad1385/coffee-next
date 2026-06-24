@@ -6,14 +6,19 @@ import CommentModel from "@/models/Comment";
 import connectToDB from "@/configs/db";
 const Comments = async () => {
   connectToDB();
-  const comments = await CommentModel.find({});
+  const comments = await CommentModel.find({})
+    .populate("product", "title")
+    .sort({ createdAt: -1 });
   return (
     <Layout>
       <main>
         {comments.length === 0 ? (
           <p className={styles.empty}>کامنتی وجود ندارد</p>
         ) : (
-          <Table comments={comments} title="لیست کامنت ها" />
+          <Table
+            comments={JSON.parse(JSON.stringify(comments))}
+            title="لیست کامنت ها"
+          />
         )}
       </main>
     </Layout>

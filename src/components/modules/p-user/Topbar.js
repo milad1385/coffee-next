@@ -5,7 +5,6 @@ import { authUser } from "@/utils/serverHelper";
 import MenuIcon from "./MenuIcon";
 const Topbar = async () => {
   const user = await authUser();
-  console.log(user);
   return (
     <>
       <div className={styles.topbar}>

@@ -77,7 +77,7 @@ export default function DataTable({ comments, title }) {
             "خیلی هم عالی",
             () => {
               router.refresh();
-            }
+            },
           );
         }
       }

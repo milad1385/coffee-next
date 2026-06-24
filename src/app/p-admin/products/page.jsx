@@ -6,7 +6,7 @@ import connectToDB from "@/configs/db";
 import productsModel from "@/models/Product";
 async function Products() {
   connectToDB();
-  const products = await productsModel.find({});
+  const products = await productsModel.find({}).sort({ createdAt: -1 });
   return (
     <Layout>
       <AddProduct />

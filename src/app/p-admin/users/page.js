@@ -7,7 +7,7 @@ import UserModel from "@/models/User";
 
 const page = async () => {
   connectToDB();
-  const users = await UserModel.find({}).lean();
+  const users = await UserModel.find({}).sort({ createdAt: -1 }).lean();
 
   return (
     <Layout>
