@@ -11,14 +11,14 @@
   z-index: 400;
 }
 
-.modal_container{
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 350;
+.modal_container {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 350;
 }
 
 .modal {
@@ -29,3 +29,8 @@
   z-index: 600;
 }
 
+@media (max-width: 557px) {
+  .modal {
+    width: 350px;
+  }
+}
