@@ -50,3 +50,9 @@
     font-size: 18px;
   }
 }
+
+@media (max-width: 576px) {
+  .content_details a{
+    font-size: 14px;
+  }
+}
