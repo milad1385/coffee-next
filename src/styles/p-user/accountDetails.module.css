@@ -261,3 +261,17 @@
     margin-top: 30px;
   }
 }
+
+@media (max-width: 576px) {
+  .title span {
+    font-size: 18px;
+  }
+
+  .title{
+    margin-top: 10px;
+  }
+
+  .orderDetails p{
+    font-size: 14px !important;
+  }
+}
