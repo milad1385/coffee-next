@@ -1,0 +1,158 @@
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.401);
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.group p {
+  font-size: 14px;
+}
+
+.modal_container {
+  padding: 20px 25px;
+  max-height: 575px;
+  overflow-y: auto;
+}
+
+.productSectionTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productSectionTitle svg {
+  cursor: pointer;
+}
+
+.modal_container::-webkit-scrollbar {
+  display: none;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.deliverStyle {
+  background-color: #009905;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.group:last-child {
+  border-bottom: 0;
+}
+
+.modal_title {
+  padding: 1rem 0rem;
+  text-wrap: auto;
+  line-height: 32px;
+}
+
+.productImage {
+  width: 100px;
+  height: 100px;
+}
+
+.productSecion {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.productSecion h3 {
+  font-size: 18px;
+  color: #2a2a2a;
+  margin-bottom: 5px;
+}
+
+.prouctItem {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.prouctItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prouctItem p {
+  text-align: right;
+  font-size: 14px;
+}
+
+.productItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: -35px;
+}
+
+.modal_bill div {
+  font-size: 14px;
+}
+
+.modal_btn {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #711d1c;
+  margin-top: 1rem;
+}
+
+.modal_bill {
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.modal_bill div {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 557px) {
+  /* .modal_container {
+    width: 80%;
+  } */
+
+  .productSectionTitle svg {
+    cursor: default;
+  }
+
+  .productImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .productItems{
+    margin-right: -20px;
+  }
+
+  .productSectionTitle {
+    margin-bottom: 10px;
+  }
+
+  .productSectionTitle h3{
+    font-size: 16px;
+  }
+
+  .prouctItem p{
+    font-size: 12.8px;
+  }
+}
